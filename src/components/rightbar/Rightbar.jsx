@@ -1,5 +1,5 @@
 import "./Rightbar.css";
-
+import Friends from "../Friends/Friends";
 function Rightbar() {
   return (
     <div className="rightbar">
@@ -13,18 +13,9 @@ function Rightbar() {
         <img src="/assets/ad.png" alt="" className="rightbarAd" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img
-                src="assets/person/3.jpeg"
-                alt=""
-                className="rightbarProfileImg"
-              />
-              <span className="rightbarOnline"></span>
-              
-            </div>
-            <span className="rightbarUsername">John Carter</span>
-          </li>
+          <Friends />
+          <Friends />
+          <Friends />
         </ul>
       </div>
     </div>
