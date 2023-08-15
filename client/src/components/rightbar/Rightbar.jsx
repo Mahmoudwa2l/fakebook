@@ -1,28 +1,26 @@
 import "./Rightbar.css";
-import { Users } from "../../dummyData";
-import Online from "../Friends/Friends";
-
-export default function Rightbar({ profile }) {
-  const HomeRightbar = () => {
-    return (
+import Friends from "../Friends/Friends";
+import {Users} from "../../dummyData"
+function Rightbar({profile}) {
+  const HomeRightbar = () =>{
+    return(
       <>
         <div className="birthdayContainer">
           <img className="birthdayImg" src="assets/gift.png" alt="" />
           <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
+            <b>Mahmoud Wael</b> and <b>3 other friends</b> have a birthday today
           </span>
         </div>
-        <img className="rightbarAd" src="assets/ad.png" alt="" />
+        <img src="/assets/ad.png" alt="" className="rightbarAd" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
+          {Users.map(u=>(
+            <Friends key={u.id} user={u} />
           ))}
-        </ul>
+        </ul> 
       </>
-    );
+    )
   };
-
   const ProfileRightbar = () => {
     return (
       <>
@@ -99,7 +97,10 @@ export default function Rightbar({ profile }) {
     <div className="rightbar">
       <div className="rightbarWrapper">
         {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        
       </div>
     </div>
   );
 }
+
+export default Rightbar;
